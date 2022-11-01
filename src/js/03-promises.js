@@ -22,7 +22,7 @@ function onSubmitClick(e) {
     elements: { amount, delay, step },
   } = e.target;
 
-  for (i = 0; i < Number(amount.value); i++) {
+  for (let i = 0; i < Number(amount.value); i++) {
     createPromise(i + 1, Number(delay.value) + i * Number(step.value))
       .then(({ position, delay }) => {
         Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
